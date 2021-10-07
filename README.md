@@ -1,5 +1,5 @@
-# PythonBotTemplate
-Discord.py Bot Template
+# Discord.py Bot Template
+Discord.py Bot Template for discord.
 
 ### How to use:
 
@@ -29,7 +29,7 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
-Now, Open a new tmux session (If you installed tmux)
+Now, Open a new TMUX session (If you installed tmux)
 
 ```bash
 tmux
@@ -47,10 +47,11 @@ pip3 install discord
 pip3 install requests
 ```
 
-Now, Lets run the bot file
+Now, Let's run the bot file
 ```bash
 python3 bot.py
 ```
 
 ### You are done! Enjoy your discord bot!
+( If your OS was not included here, google is your friend ;) )
 
