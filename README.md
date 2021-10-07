@@ -13,12 +13,14 @@ Paste your desired prefix
 prefix = 'prefix here'
  ```
  
- # How to install Dependencies
+# How to install Dependencies
 
-# Ubuntu 20.04
-`sudo apt-get install python3`
-`sudo apt-get install pip`
-(optional) `sudo apt-get install tmux`
+### Ubuntu 20.04
+```bash 
+sudo apt-get install python3
+sudo apt-get install pip
+(optional) sudo apt-get install tmux
+```
 
 Once you have ran those commands, Update
 
