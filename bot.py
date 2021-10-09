@@ -67,13 +67,13 @@ async def dog(ctx):
   url = 'https://dog.ceo/api/breeds/image/random'
   response = requests.get(url)
   json_data = response.json()
-  danger = json_data['message']
+  url = json_data['message']
   embed = discord.Embed(
     title = "Woof!",
     description = "",
     colour = discord.Colour.orange()
     )
-  embed.set_image(url=f"{danger}")
+  embed.set_image(url=f"{url}")
   embed.set_footer(text=f"{footer}")
   await ctx.send(embed=embed) 
 
@@ -88,8 +88,8 @@ async def mute(ctx, user : discord.Member, *, reason):
 
   await user.add_roles(role)
   embed = discord.Embed(
-        title = "✅ " f'{user.name}'" has muted for:",
-        description = "'" f'{reason}' "'",
+        title = "✅ f"{user.name} has muted for:",
+        description = f"{reason}",
         colour = discord.Colour.green()
         )
   embed.set_thumbnail(url=f"{user.avatar_url}")
@@ -102,7 +102,7 @@ async def unmute(ctx, user : discord.Member):
   role = discord.utils.get(ctx.guild.roles, name = "Muted")
   await user.remove_roles(role)
   embed = discord.Embed(
-        title = "✅ " f'{user.name}'" has been unmuted",
+        title = "✅ f"{user.name} has been unmuted",
         description = "",
         colour = discord.Colour.green()
         )
@@ -125,7 +125,7 @@ async def purge(ctx, amount : int):
     await ctx.message.delete()
     await ctx.channel.purge(limit=amount)
     embed = discord.Embed(
-          title = "✅ Purged " f'{amount}' " messages",
+          title = f"✅ Purged {amount} messages",
           description = "This message will auto delete in 5 seconds",
           colour = discord.Colour.green()
         )
@@ -172,8 +172,8 @@ async def ban(ctx, member : discord.Member, *, Reason=None):
   await member.ban(reason=Reason)
 
   embed = discord.Embed(
-          title = "✅ " f'{member}' " has been banned for:",
-          description = "'" f'{Reason}' "'",
+          title = "✅ f"{member} has been banned for:",
+          description = f" {Reason}",
           colour = discord.Colour.green()
         )
   embed.set_thumbnail(url=f"{member.avatar_url}")
